@@ -1,10 +1,11 @@
 @extends('pages.master')
 
 @section('pagetitle')
-    Homepage
+    All Users
 @stop
+
 @section('title')
-    Welcome to HMPG
+    All Users
 @stop
 
 @section('search')
@@ -41,7 +42,11 @@
 @stop
 
 @section('websites')
-    @foreach($websites as $website)
-
+    @foreach($users as $user)
+        <div id="header">
+            <h2>
+                <a href="/users/{{$user->id}}">{{$user->nickname}}</a>
+            </h2>
+        </div>
     @endforeach
 @stop
