@@ -8,40 +8,16 @@
 @stop
 
 @section('search')
-    <div id="searchbar" class="row">
-        <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-3">
-                    <select id="Engine" class="text-center" style="height: 52.5px;">
-                        <option value="GG">Google</option>
-                        <option value="BD">Baidu</option>
-                        <option value="BB">bilibili</option>
-                        <option value="Weibo">Weibo</option>
-                        <option value="Youtube">Youtube</option>
-                        <option value="Zhihu">Zhihu</option>
-                    </select>
-                </div>
-                <div class="col-sm-1 hidden-md hidden-lg">
-                    <br>
-                </div>
-                <div class="col-md-9">
-                    <input id="enter" type="text" class="input_control" list="browsers" name="searchInput">
-                    <datalist id="choices">
-                    </datalist>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-1 hidden-md hidden-lg">
-            <br>
-        </div>
-        <div class="col-md-3">
-            <button type="button" id="search" class="" onclick="clickEnter()">Search</button>
-        </div>
-    </div>
+@include('pages.search')
 @stop
 
 @section('websites')
-    @foreach($websites as $website)
-
-    @endforeach
+    <div id="header">
+        <h2>
+            Welcome to Your Own homepage
+        </h2>
+        <p>
+            Homepage is created in the purpose of daily use, You can import your favourite websites to save your time finding it in your  bookmark bar.
+        </p>
+    </div>
 @stop

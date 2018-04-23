@@ -13,10 +13,21 @@
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-    $websites = DB::select('select * from websites', [1]);
-    return view('welcome', ['websites' => $websites]);
+    if(Auth::user() != null) {
+        return Redirect::to('/users');
+    }
+    return view('welcome');
 });
 Route::get('users', 'UsersController@index');
+Route::post('users', 'UsersController@edit')->name('updateuser');
+Route::get('logout', function(){
+    Auth::logout();
+    return view('welcome');
+});
+Route::get('users/login', 'UsersController@login')->name('loginuser');
+Route::post('users/login', 'UsersController@check')->name('checkuser');
 Route::get('users/create', 'UsersController@create')->name('createuser');
-Route::get('users/{id}', 'UsersController@show')->name('showuser');
-Route::post('users', 'UsersController@store')->name('storeuser');
+Route::post('users/create', 'UsersController@store')->name('storeuser');
+Route::get('users/alluser', 'UsersController@alluser')->name('alluser');
+Route::get('users/alluser/{id}', 'UsersController@show')->name('showuser');
+//Route::any('users/update/{types}', 'UsersController@update');

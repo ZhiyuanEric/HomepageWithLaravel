@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWebsitesTable extends Migration
+class CreateTypeType extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,15 @@ class CreateWebsitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('websites', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->unsigned();
+            $table->string('type_name');
             $table->integer('user_id')->unsigned();
-            $table->string('name');
-            $table->string('url');
-            $table->string('image');
-            $table->integer('alexa')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('websites', function($table) {
+        Schema::table('types', function($table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('type_id')->references('id')->on('types');
         });
     }
 
@@ -37,6 +32,6 @@ class CreateWebsitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('websites');
+        Schema::dropIfExists('types');
     }
 }

@@ -18,8 +18,7 @@ class WebsitesTableSeeder extends \DatabaseSeeder
 
         $websites = array(
             array(
-                'id' => 1,
-                'type_name' => 'daily',
+                'type_id' => '1',
                 'name' => 'Google',
                 'user_id' => '1',
                 'url' => 'http://www.google.ca',
@@ -27,8 +26,7 @@ class WebsitesTableSeeder extends \DatabaseSeeder
                 'alexa' => '0',
             ),
             array(
-                'id' => 2,
-                'type_name' => 'daily',
+                'type_id' => '1',
                 'name' => 'Youtube',
                 'user_id' => '1',
                 'url' => 'http://www.Youtube.com',

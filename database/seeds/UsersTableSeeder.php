@@ -18,9 +18,9 @@ class UsersTableSeeder extends \DatabaseSeeder
 
         $users = array(
             array(
-                'nickname' => 'a',
-                'email' => 'a@a.a',
-                'password' => 'aaa',
+                'nickname' => 'test',
+                'email' => 'test@test.test',
+                'password' => bcrypt('testtest'),
             )
         );
         DB::table('users')->insert($users);

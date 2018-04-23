@@ -1,3 +1,4 @@
+var xmlHttp
 onload = function() {
     $("form").validate();
     var input = document.getElementById("enter");
@@ -55,3 +56,13 @@ function addType(){
         edit.style.display = "none"
     }
 }
+
+// function showSite(type) {
+//     xmlHttp=GetXmlHttpObject()
+//     if (xmlHttp==null)
+//     {
+//         alert ("Browser does not support HTTP Request")
+//         return
+//     }
+// }
+
